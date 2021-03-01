@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+@keyframes all {
+    0% {
+        transform:rotateX(90deg);
+        opacity:1; 
+    }  
+    100%{
+        transform:translateY(-100%);
+        opacity: 0.8;      
+    }       
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.main{
+    position: relative;
+    width:100vw;
+    height:100vh;
+    background-color:  hsl(235, 16%, 14%);
+    font-family: 'Red Hat Text', sans-serif;
+    text-align: center;
+}
+
+header{
+    padding:10vh;
+    word-spacing: 10px;
+    letter-spacing: 10px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.countdown{
+    width:100vw;
+    height:20vh;
+    padding:20px;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items:center;
+}
+
+.time{
+    width:20%;
+    height:100%;
+    margin:-20px; 
+}
+
+.card{
+    clip-path: polygon(100% 0, 100% 45%, 95% 50%, 100% 55%, 100% 100%, 0 100%, 0 55%, 5% 50%, 0 45%, 0 0);  
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+    margin:auto;
+    width:60%;
+    background-color:hsl(236, 21%, 26%);
+    height:80%;
+    margin-bottom:20px;
+    border-radius:5px;
+}
+
+
+.card::after{
+    bottom:0;
+    position:absolute;
+    content:"";
+    width:100%;
+    height:50%;
+    background:linear-gradient(hsl(236, 21%, 26%,0.5),rgba(5, 5, 5,0.5))
+}
+
+.four.card::after{
+    animation: all 0.8s ease infinite ; 
+}
+
+.time p{
+    letter-spacing:3px;
+    color:hsl(237, 18%, 59%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    height:20%;
+    width:80%;
+    font-size: 12px;
+}
+
+.card hr{
+    position: absolute;
+    width:100%;
+    opacity: 0.1;
+}
+
+
+.card h1{
+    font-size:50px;
+    color:hsl(345, 95%, 68%);
+}
+
+footer{
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        width:100vw;
+        position:absolute;
+        height:20vh;
+        bottom:0px;
+        background-image: url(./images/pattern-hills.svg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+
+footer div{
+    margin:15px;
+    cursor: pointer;
+   
+}
+
+.icon1{
+    width:50px;
+    height:50px;
+    background-image: url(./images/icon-facebook.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon3:hover, .icon2:hover , .icon1:hover{
+    filter: invert(0.4) sepia(1) saturate(14.6) hue-rotate(309.6deg) brightness(1.01);
+}
+.icon2{
+    width:50px;
+    height:50px;
+    background-image: url(./images/icon-pinterest.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.icon3{
+    width:50px;
+    height:50px;
+    background-image: url(./images/icon-instagram.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (max-width: 645px){
+    header{
+        letter-spacing:4px;
+        word-spacing: 2px;
+    }
+    .time{
+        margin:2%; 
+    }
+    .time p{
+        letter-spacing:2px;
+        font-size:8px;
+    }
+    .card{
+        width:80%;
+    }
+    .card h1{
+        font-size: 30px;
+        color:hsl(345, 95%, 68%);
+    }
+    footer{
+        height: 30vh;
+        background-position: 85% ;
+    }
+    footer div{
+        margin-top:50px;
+        margin-right: 2px;
+    }
+    
+}
+
+

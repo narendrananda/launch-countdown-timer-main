@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Launch countdown timer</title>
+
+
+</head>
+<body>
+  <div class="main">
+    
+    <header>
+      <h3>We're launching soon</h3>
+    </header>
+
+    <div class="countdown">
+      <div class="time">
+          <div class="card one">
+            <hr/>
+            <h1 id="days">14</h1>
+          </div>
+          <p>DAYS</p>
+      </div>
+      <div class="time">
+        <div class="card two">
+          <hr/>
+          <h1 id="hours">23</h1>
+        </div>
+        <p>HOURS</p>
+      </div>
+      <div class="time">
+        <div class="card three">
+          <hr/>
+          <h1 id="minutes">59</h1>
+        </div>
+        <p>MINUTES</p>
+      </div>
+
+      <div class="time">
+        <div class="card four" >
+          <hr/>
+          <h1 id="seconds">59</h1>
+        </div>
+        <p>SECONDS</p>
+      </div>
+
+    </div>
+    
+    <footer>
+        <div class="icon1"></div>
+        <div class="icon2"></div>
+        <div class="icon3"></div>
+    </footer>
+  </div>
+
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Narendra Nanda</a>.
+  </div> -->
+  <script>
+
+    const daysCard =  document.getElementById("days");
+    const hoursCard = document.getElementById("hours");
+    const minutesCard = document.getElementById("minutes");
+    const secondsCard = document.getElementById("seconds");
+
+    countdown();
+
+    function countdown(){
+    let now = new Date();
+    let eventday = new Date(2021,03,15);
+    let remday = eventday.getDate() - now.getDate();
+    
+    let currentime = now.getTime();
+    let eventime = eventday.getTime();
+    let remtime = eventime - currentime;
+
+    let s = Math.floor(remtime/1000);
+    let m = Math.floor(s/60);
+    let h = Math.floor(m/60);
+    let d = Math.floor(h/24);
+    
+      h = h%24;
+      m = m%60;
+      s = s%60;
+
+      remday = remday - 1 ;
+
+      remday = (remday<10)?("0"+remday):remday
+      h = (h<10)?("0"+h):h;
+      m = (m<10)?("0"+m):m;
+      s = (s<10)?("0"+s):s;
+
+      daysCard.innerHTML = remday;
+      hoursCard.innerHTML = h;
+      minutesCard.innerHTML = m;
+      secondsCard.innerHTML = s;
+    }
+
+    setInterval(countdown,1000);
+    
+  </script>
+</body>
+</html>
